@@ -1,7 +1,8 @@
 # @Generator_QR_Code_Bot - Telegram Bot
 
 - :lock: The Telegram Bot that generates QR-Code.
-- :pencil: There is the `'bitly_api'` library is connected here to shorten links.
+- :link: The Bot can generate a QR-Code from text or a link.
+- :pencil: There is the `'qrcode'` library is connected here.
 - :open_file_folder: The Bot has two commands: `/start`, `/help`.
 
 ---
