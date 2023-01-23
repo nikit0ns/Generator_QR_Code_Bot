@@ -2,7 +2,7 @@
 
 - :lock: The Telegram Bot that generates QR-Code.
 - :link: The Bot can generate a QR-Code from text or a link.
-- :pencil: There is the `'qrcode'` library is connected here.
+- :books: There is the `'qrcode'` library is connected here.
 - :open_file_folder: The Bot has two commands: `/start`, `/help`.
 
 ---
