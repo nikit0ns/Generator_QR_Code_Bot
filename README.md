@@ -4,6 +4,7 @@
 - :link: The Bot can generate a QR-Code from text or a link.
 - :books: There is the `'qrcode'` library is connected here.
 - :open_file_folder: The Bot has two commands: `/start` , `/help`.
+- :lock: The Telegram Bot Status: Doesn't Work On Hosting.
 
 ---
 
