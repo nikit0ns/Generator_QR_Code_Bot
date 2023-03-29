@@ -36,12 +36,15 @@ flake:
 .PHONY: lint
 lint: black isort flake
 
+config.py:
+	@echo TOKEN = 'ENTER THE TOKEN' > config.py
+
 .PHONY: run
-run:
+run: config.py
 	@echo "Running in development mode"
 	$(python) main.py
 
 .PHONY: run_docker
-run_docker:
+run_docker: config.py
 	@echo "Running in docker mode"
 	docker-compose up
