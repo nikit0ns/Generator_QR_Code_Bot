@@ -41,8 +41,8 @@ lint: black isort flake
 install:
 	$(python) -m pip install -r requirements.txt
 
-config.py:
-	@echo TOKEN = 'ENTER THE TOKEN' > config.py
+src/config.py:
+	@echo TOKEN = 'ENTER THE TOKEN' > src/config.py
 
 .PHONY: run
 run: config.py
