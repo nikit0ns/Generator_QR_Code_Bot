@@ -10,6 +10,7 @@ help:
 	@echo ""
 	@echo "AVAILABLE COMMANDS"
 	@echo "  run		Start the bot"
+	@echo "  install 	Install the dependencies"
 	@echo "  run_docker	Start the bot in a docker container"
 	@echo "  flake		Run flake8"
 	@echo "  black		Run black"
@@ -36,6 +37,10 @@ flake:
 .PHONY: lint
 lint: black isort flake
 
+.PHONY: install
+install:
+	$(python) -m pip install -r requirements.txt
+
 config.py:
 	@echo TOKEN = 'ENTER THE TOKEN' > config.py
 
@@ -47,4 +52,6 @@ run: config.py
 .PHONY: run_docker
 run_docker: config.py
 	@echo "Running in docker mode"
-	docker-compose up
+	docker build -t yousha_generate_qr_bot .
+	docker run -p 8080:8080 yousha_generate_qr_bot
+
