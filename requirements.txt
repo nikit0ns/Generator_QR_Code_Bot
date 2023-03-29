@@ -1,2 +1,8 @@
-aiogram==3.0.0b6
+aiogram==2.25.1
+aiohttp[speedups]
 qrcode==7.3.1
+
+# dev dependencies
+black
+isort
+flake8

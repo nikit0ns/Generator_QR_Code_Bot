@@ -1,16 +1,35 @@
-# @Generator_QR_Code_Bot - Telegram Bot
+#  [@yousha_generate_qr_bot](https://t.me/yousha_generate_qr_bot) - Телеграм Бот
 
-- :lock: The Telegram Bot that generates QR-Code.
-- :link: The Bot can generate a QR-Code from text or a link.
-- :books: There is the `'qrcode'` library is connected here.
-- :open_file_folder: The Bot has two commands: `/start` , `/help`.
-- :lock: The Telegram Bot Status: Doesn't Work On Hosting.
+<!-- Center image -->
+<p align="center">
+  <img src="assets/bot_logo.jpg" alt="qr" width="200"/>
+
+## Функционал
+- Телеграм бот для генерации QR-кода.
+- Бот может сгенерировать QR-код для ссылок и текста.
+- Подключена библиотека `'qrcode'`.
+- У бота две команды: `/start` , `/help`, `/qr`.
+- Бот сейчас работает! --> [@yousha_generate_qr_bot](https://t.me/yousha_generate_qr_bot)
+
+Обновления:
+- *У бота имеется обработка ошибок.*
+- *Бот контейниризован*
+- *Вы можете добавить бота в чат беседы*
 
 ---
 
-# Screenshots
- 
- ![Generator_QR_Code_Bot_Start](https://github.com/nikit0ns/Generator_QR_Code_Bot/blob/master/Screenshots/Generator_QR_Code_Bot_Start.png)
- ![Generator_QR_Code_Bot_Link](https://github.com/nikit0ns/Generator_QR_Code_Bot/blob/master/Screenshots/Generator_QR_Code_Bot_Link.png)
- ![Generator_QR_Code_Bot_Text](https://github.com/nikit0ns/Generator_QR_Code_Bot/blob/master/Screenshots/Generator_QR_Code_Bot_Text.png)
- ![Generator_QR_Code_Bot_Commands](https://github.com/nikit0ns/Generator_QR_Code_Bot/blob/master/Screenshots/Generator_QR_Code_Bot_Commands.png)
+## Запуск проекта
+
+```bash
+pip3 install -r requirements.txt
+make run
+```
+
+## Скриншоты
+
+![Работа с чатом](assets/showcase/ux_1.png)
+![Обработка ошибок](assets/showcase/ux_2.png)
+
+## Связь с автором
+
+[@Quakumei](t.me/Quakumei) - Telegram
