@@ -47,7 +47,7 @@ config.py:
 .PHONY: run
 run: config.py
 	@echo "Running in development mode"
-	$(python) main.py
+	$(python) src/main.py
 
 .PHONY: run_docker
 run_docker: config.py
