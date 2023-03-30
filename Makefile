@@ -34,8 +34,16 @@ isort:
 flake:
 	$(python) -m flake8 .
 
+.PHONY: bandit
+bandit:
+	$(python) -m bandit -r src --severity=medium
+
+.PHONY: pylint
+pylint:
+	$(python) -m pylint src
+
 .PHONY: lint
-lint: black isort flake
+lint: black isort flake bandit pylint
 
 .PHONY: install
 install:

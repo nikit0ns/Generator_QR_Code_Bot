@@ -22,6 +22,7 @@
 
 ```bash
 pip3 install -r requirements.txt
+echo "TOKEN='ТОКЕН:БОТА'" > src/config.py
 make run
 ```
 
