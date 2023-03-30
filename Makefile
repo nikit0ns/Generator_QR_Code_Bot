@@ -14,7 +14,8 @@ help:
 	@echo "  install 	Install the dependencies"
 	@echo "  run_docker	Start the bot in a docker container"
 	@echo "	 start_service 	Start linux service"
-	@echo "  flake		Run flake8"
+	@echo "  stop_service 	Stop linux service"
+	 echo "  flake		Run flake8"
 	@echo "  black		Run black"
 	@echo "  isort		Run isort"
 	@echo "  lint		Reformat code"
@@ -69,3 +70,9 @@ run_docker: src/config.py
 start_service: src/config.py
 	@echo "Starting docker container in autoreboot mode"
 	bash start_service.sh
+
+
+.PHONY: stop_service
+stop_service:
+	@echo "Stopping the service..."
+	systemctl disable yousha_generate_qr_bot.service
