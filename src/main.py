@@ -71,9 +71,9 @@ async def error(message: types.Message):
     )
 
 
-@dp.message_handler(commands=["qr"])
+@dp.message_handler()
 async def send_text_based_qr(message: types.Message):
-    """/qr command handler"""
+    """QR generation command handler"""
     qr_code = gen_qr(message.text)
     await message.reply_photo(
         qr_code,
@@ -81,12 +81,6 @@ async def send_text_based_qr(message: types.Message):
         "Сделано с помощью @yousha_generate_qr_bot</b>",
         parse_mode="HTML",
     )
-
-
-@dp.message_handler()
-async def general(message: types.Message):
-    """Any text message will be processed here"""
-    await send_text_based_qr(message)
 
 
 @dp.inline_handler()
