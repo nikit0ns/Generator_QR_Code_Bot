@@ -12,7 +12,8 @@ help:
 	@echo "  run		Start the bot"
 	@echo "  install 	Install the dependencies"
 	@echo "  run_docker	Start the bot in a docker container"
-	@echo "  flake		Run flake8"
+	@echo "	 start_service 	Start linux service"
+	 echo "  flake		Run flake8"
 	@echo "  black		Run black"
 	@echo "  isort		Run isort"
 	@echo "  lint		Reformat code"
@@ -63,3 +64,7 @@ run_docker: src/config.py
 	docker build -t yousha_generate_qr_bot .
 	docker run -p 8080:8080 yousha_generate_qr_bot
 
+.PHONY: start_service
+start_service: src/config.py
+	@echo "Starting docker container in autoreboot mode"
+	bash start_service.sh

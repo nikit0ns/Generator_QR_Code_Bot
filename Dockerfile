@@ -8,4 +8,7 @@ COPY . /app/
 WORKDIR /app
 
 RUN pip install -r requirements.txt
+
+# Specify PYTHONPATH
+ENV PYTHONPATH=/app
 CMD ["python", "src/main.py"]
