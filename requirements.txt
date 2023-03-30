@@ -7,3 +7,7 @@ asyncio
 black
 isort
 flake8
+
+# ci/cd dependencies
+pylint
+bandit
