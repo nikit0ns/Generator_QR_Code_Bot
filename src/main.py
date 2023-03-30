@@ -1,18 +1,18 @@
-"""
-    This is a simple bot that generates QR codes from text.
-"""
+"""This is a simple bot that generates QR codes from text."""
 
 import asyncio
 import logging
-from io import BytesIO
 
-import qrcode
 from aiogram import Bot, Dispatcher, types
 
 from src import config
+from src.gen_qr import gen_qr
 
 bot = Bot(token=config.TOKEN)  # Ваш токен
 dp = Dispatcher(bot)
+
+# Set logging level
+logging.basicConfig(level=logging.INFO)
 
 
 @dp.message_handler(commands=["start"])
@@ -74,29 +74,7 @@ async def error(message: types.Message):
 @dp.message_handler(commands=["qr"])
 async def send_text_based_qr(message: types.Message):
     """/qr command handler"""
-
-    def gen_qr(text: str) -> BytesIO:
-        """Generate QR code from text"""
-        qr_code = qrcode.QRCode(
-            version=1,
-            error_correction=qrcode.constants.ERROR_CORRECT_L,
-            box_size=20,
-            border=2,
-        )
-        qr_code.add_data(text)
-        qr_code.make(fit=True)
-
-        img = qr_code.make_image(fill_color="black", back_color="white")
-        buf = BytesIO()
-        img.save(buf, format="PNG")
-        buf.seek(0)
-
-        return buf
-
-    logging.info("Генерирую QR для сообщения: %s", message.text)
     qr_code = gen_qr(message.text)
-    logging.info("Код сгенерирован для: %s", message.text)
-
     await message.reply_photo(
         qr_code,
         caption=f"<b>✅ Ваш QR успешно сгенерирован: {message.text}\n"
@@ -109,6 +87,29 @@ async def send_text_based_qr(message: types.Message):
 async def general(message: types.Message):
     """Any text message will be processed here"""
     await send_text_based_qr(message)
+
+
+@dp.inline_handler()
+async def inline_ad(inline_query: types.InlineQuery):
+    """Отправить ссылку на бота"""
+    await bot.answer_inline_query(
+        inline_query.id,
+        results=[
+            types.InlineQueryResultArticle(
+                id="1",
+                title="Yousha QR-code generator bot",
+                input_message_content=types.InputTextMessageContent(
+                    "<b>Перейди в @yousha_generate_qr_bot, чтобы сгенерировать QR-код!</b>",
+                    parse_mode="HTML",
+                ),
+                description="Бот для генерации QR-кодов по тексту",
+                thumb_url="https://github.com/Quakumei/QR_Code_Bot/raw/main/assets/bot_logo.jpg",
+                thumb_width=512,
+                thumb_height=512,
+            )
+        ],
+        cache_time=1,
+    )
 
 
 async def main():

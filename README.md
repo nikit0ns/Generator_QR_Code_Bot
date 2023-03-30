@@ -14,7 +14,7 @@
 Обновления:
 - *У бота имеется обработка ошибок.*
 - *Бот контейниризован*
-- *Вы можете добавить бота в чат беседы*
+- *Можно ссылаться на бота в любом чате*
 - *CI и make lint*
 - *make run*
 
@@ -30,8 +30,12 @@ make run
 
 ## Скриншоты
 
-![Работа с чатом](assets/showcase/ux_1.png)
-![Обработка ошибок](assets/showcase/ux_2.png)
+<!-- Use fixed width for screenshots -->
+
+<img src="assets/showcase/ux_1.png" alt="Взаимодействие" width="512"/>
+<img src="assets/showcase/ux_2.png" alt="Обработка ошибок" width="512"/>
+<img src="assets/showcase/ux_3.jpg" alt="Ссылка из чата" width="512"/>
+
 
 ## Связь с автором
 

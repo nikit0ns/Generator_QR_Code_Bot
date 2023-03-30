@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := help
 
 # Set python
+export PYTHONPATH=.
 python = python
 
 .PHONY: help
@@ -13,7 +14,7 @@ help:
 	@echo "  install 	Install the dependencies"
 	@echo "  run_docker	Start the bot in a docker container"
 	@echo "	 start_service 	Start linux service"
-	 echo "  flake		Run flake8"
+	@echo "  flake		Run flake8"
 	@echo "  black		Run black"
 	@echo "  isort		Run isort"
 	@echo "  lint		Reformat code"
