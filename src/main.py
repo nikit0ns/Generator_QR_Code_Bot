@@ -99,11 +99,13 @@ async def inline_ad(inline_query: types.InlineQuery):
                 id="1",
                 title="Yousha QR-code generator bot",
                 input_message_content=types.InputTextMessageContent(
-                    "<b>Перейди в @yousha_generate_qr_bot, чтобы сгенерировать QR-код!</b>",
+                    "<b>Перейди в @yousha_generate_qr_bot, "
+                    "чтобы сгенерировать QR-код!</b>",
                     parse_mode="HTML",
                 ),
                 description="Бот для генерации QR-кодов по тексту",
-                thumb_url="https://github.com/Quakumei/QR_Code_Bot/raw/main/assets/bot_logo.jpg",
+                thumb_url="https://github.com/Quakumei/"
+                "QR_Code_Bot/raw/main/assets/bot_logo.jpg",
                 thumb_width=512,
                 thumb_height=512,
             )
