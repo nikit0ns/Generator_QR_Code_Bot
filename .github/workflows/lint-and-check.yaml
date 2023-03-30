@@ -14,7 +14,7 @@ jobs:
         python-version: '3.9'
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Lint code
-      run: pylint src
-    - name: Check vulnerabilities
-      run: bandit -r .
+    - name: Make lint
+      run: make lint
+    - name: Tell you that you are awesome
+      run: echo "You are awesome!"
