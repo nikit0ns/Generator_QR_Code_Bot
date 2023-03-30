@@ -53,12 +53,12 @@ src/config.py:
 	@echo TOKEN = 'ENTER THE TOKEN' > src/config.py
 
 .PHONY: run
-run: config.py
+run: src/config.py
 	@echo "Running in development mode"
 	$(python) src/main.py
 
 .PHONY: run_docker
-run_docker: config.py
+run_docker: src/config.py
 	@echo "Running in docker mode"
 	docker build -t yousha_generate_qr_bot .
 	docker run -p 8080:8080 yousha_generate_qr_bot
