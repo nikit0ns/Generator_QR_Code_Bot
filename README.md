@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua/)
+
 # @Generator_QR_Code_Bot - Telegram Bot
 
 - :lock: The Telegram Bot that generates QR-Code.
